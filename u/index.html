@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Un perfil en BECO</title>
+<meta name="description" content="Abre este perfil en la app BECO.">
+<meta name="theme-color" content="#FBF6EE">
+<meta name="color-scheme" content="light">
+<meta name="robots" content="noindex">
+<link rel="icon" href="../favicon.png">
+<link rel="apple-touch-icon" href="../logo.png">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header>
+<a class="brand" href="../"><img src="../logo.png" alt="" width="40" height="40"><span>BECO</span></a>
+<nav><a href="../privacidad/">Privacidad</a><a href="../condiciones/">Condiciones</a><a href="../soporte/">Soporte</a></nav>
+</header>
+<main>
+<h1 id="title">Un perfil en BECO</h1>
+<p class="lead">Abre el perfil en la app para ver sus cafeterías favoritas y seguirle.</p>
+<p><a class="button" id="open" href="beco://">Abrir en BECO</a></p>
+<div class="card">
+<h2>¿Aún no tienes BECO?</h2>
+<p>BECO está en fase de pruebas con un grupo reducido de personas. Si quieres participar, escríbenos a <a href="mailto:hola@becocafeapp.com">hola@becocafeapp.com</a>.</p>
+<p>Y síguenos en Instagram para enterarte de cuándo llega: <a href="https://www.instagram.com/becocafeapp/">@becocafeapp</a>.</p>
+</div>
+<script>
+(function () {
+  var name = (new URLSearchParams(location.search).get('u') || '').toLowerCase();
+  if (!/^[a-z0-9._]{3,24}$/.test(name)) return;
+  document.getElementById('title').textContent = '@' + name + ' está en BECO';
+  document.title = '@' + name + ' en BECO';
+  document.getElementById('open').href = 'beco://u/' + encodeURIComponent(name);
+})();
+</script>
+</main>
+<footer>
+<p>BECO Café App · <a href="mailto:hola@becocafeapp.com">hola@becocafeapp.com</a></p>
+<p><a href="../privacidad/">Privacidad</a> · <a href="../condiciones/">Condiciones</a> · <a href="../soporte/">Soporte</a></p>
+</footer>
+</body>
+</html>
