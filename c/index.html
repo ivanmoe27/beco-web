@@ -23,19 +23,13 @@
 <p><a class="button" id="open" href="beco://">Abrir en BECO</a></p>
 <div class="card">
 <h2>¿Aún no tienes BECO?</h2>
-<p>BECO está en fase de pruebas con un grupo reducido de personas. Si quieres participar, escríbenos a <a href="mailto:hola@becocafeapp.com">hola@becocafeapp.com</a>.</p>
-<p>Y síguenos en Instagram para enterarte de cuándo llega: <a href="https://www.instagram.com/becocafeapp/">@becocafeapp</a>.</p>
+<p>BECO llegará muy pronto a la App Store y a Google Play.</p>
+<p>Síguenos en Instagram para enterarte de cuándo llega: <a href="https://www.instagram.com/becocafeapp/">@becocafeapp</a>.</p>
 </div>
 <script>
 (function () {
-  var params = new URLSearchParams(location.search);
-  var id = (params.get('id') || '').toLowerCase();
+  var id = (new URLSearchParams(location.search).get('id') || '').toLowerCase();
   if (!/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/.test(id)) return;
-  var name = (params.get('n') || '').trim().slice(0, 80);
-  if (name) {
-    document.getElementById('title').textContent = name + ' está en BECO';
-    document.title = name + ' en BECO';
-  }
   document.getElementById('open').href = 'beco://cafe/' + id;
 })();
 </script>
